@@ -1,3 +1,17 @@
+Most settings taken from [Allted's fork](https://github.com/Allted/Marlin), but based on Marlin/bugfix-2.0.x for ease of pulling changes.
+
+Differences:
+
+
+Extruder is mapped to MX1 extension header, connect an external stepper driver configured for 1/16 microstepping.
+
+Pinout: 1:5V 2:GND 3:Enable 4:Step 5:Direction
+
+
+Spindle/Laser function is mapped to PWM-Ext header
+
+Pinout: 1:5V 2:GND 3:NC 4:Spindle/LaserPWM 5:Spindle/LaserEnable 6:SpindleDirection
+
 # Marlin 3D Printer Firmware
 
 [![Build Status](https://travis-ci.org/MarlinFirmware/Marlin.svg?branch=RCBugFix)](https://travis-ci.org/MarlinFirmware/Marlin)

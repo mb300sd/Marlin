@@ -49,10 +49,11 @@
 //
 // Servos
 //
-#define SERVO0_PIN         22   // Motor header MX1
-#define SERVO1_PIN         23   // Motor header MX2
-#define SERVO2_PIN         24   // Motor header MX3
-#define SERVO3_PIN          5   // PWM header pin 5
+//__NOTE__ No servos...
+//#define SERVO0_PIN         22   // Motor header MX1
+//#define SERVO1_PIN         23   // Motor header MX2
+//#define SERVO2_PIN         24   // Motor header MX3
+//#define SERVO3_PIN          5   // PWM header pin 5
 
 //
 // Limit Switches
@@ -86,13 +87,19 @@
 #define Z_DIR_PIN          47
 #define Z_ENABLE_PIN       27
 
-#define E0_STEP_PIN        34
-#define E0_DIR_PIN         43
-#define E0_ENABLE_PIN      26
+//__NOTE__ E2=OldE1, E1=OldE0, E0=MX1 pins
 
-#define E1_STEP_PIN        33
-#define E1_DIR_PIN         42
-#define E1_ENABLE_PIN      25
+#define E0_STEP_PIN        32 //34
+#define E0_DIR_PIN         44 //43
+#define E0_ENABLE_PIN      22 //26
+
+#define E1_STEP_PIN        34 //33
+#define E1_DIR_PIN         43 //42
+#define E1_ENABLE_PIN      26 //25
+
+#define E2_STEP_PIN        33
+#define E2_DIR_PIN         42
+#define E2_ENABLE_PIN      25
 
 // Microstepping pins - Mapping not from fastio.h (?)
 #define X_MS1_PIN          40
@@ -101,12 +108,16 @@
 #define Y_MS2_PIN          39
 #define Z_MS1_PIN          68
 #define Z_MS2_PIN          67
-#define E0_MS1_PIN         65
-#define E0_MS2_PIN         66
-#define E1_MS1_PIN         63
-#define E1_MS2_PIN         64
+// __NOTE__ E2=OldE1, E1=OldE0, E0=MX1(no MS pins)
+//#define E0_MS1_PIN         65
+//#define E0_MS2_PIN         66
+#define E1_MS1_PIN         65 //63
+#define E1_MS2_PIN         66 //64
+#define E2_MS1_PIN         63
+#define E2_MS2_PIN         64
 
 #define DIGIPOTSS_PIN      38
+//__NOTE__ now X Y X E1(X2) E2(Y2)
 #define DIGIPOT_CHANNELS  { 4,5,3,0,1 }   // X Y Z E0 E1 digipot channels to stepper driver mapping
 #ifndef DIGIPOT_MOTOR_CURRENT
   #define DIGIPOT_MOTOR_CURRENT { 135,135,135,135,135 }   // Values 0-255 (RAMBO 135 = ~0.75A, 185 = ~1A)
@@ -129,14 +140,16 @@
 
 #define FAN_PIN             8
 #define FAN1_PIN            6
-#define FAN2_PIN            2
+//__NOTE__ FAN2 and PWM-Ext4 are same pin, now user for spindle PWM
+//#define FAN2_PIN            2
 
 //
 // Misc. Functions
 //
 #define SDSS               53
 #define LED_PIN            13
-#define PS_ON_PIN           4
+//__NOTE__ PS_ON and PWM-Ext6 are same pin, now used for spindle DIR
+//#define PS_ON_PIN           4
 #define CASE_LIGHT_PIN     46
 
 #ifndef FILWIDTH_PIN
@@ -146,16 +159,17 @@
 //
 // M3/M4/M5 - Spindle/Laser Control
 //
-#define SPINDLE_LASER_PWM_PIN    45   // MUST BE HARDWARE PWM
-#define SPINDLE_LASER_ENABLE_PIN 31   // Pin should have a pullup!
-#define SPINDLE_DIR_PIN          32
+//__NOTE__ User PWM-Ext header for Spindle/Laser
+#define SPINDLE_LASER_PWM_PIN    2 //PWM-Ext4 //45   // MUST BE HARDWARE PWM
+#define SPINDLE_LASER_ENABLE_PIN 5 //PWM-Ext5 //31   // Pin should have a pullup!
+#define SPINDLE_DIR_PIN          4 //PWM-Ext6 //32
 
 //
 // Průša i3 MK2 Multiplexer Support
 //
-#define E_MUX0_PIN         17
-#define E_MUX1_PIN         16
-#define E_MUX2_PIN         84   // 84 in MK2 Firmware
+//#define E_MUX0_PIN         17
+//#define E_MUX1_PIN         16
+//#define E_MUX2_PIN         84   // 84 in MK2 Firmware
 
 //
 // LCD / Controller
