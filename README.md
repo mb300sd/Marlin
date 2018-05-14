@@ -10,7 +10,11 @@ Pinout: 1:5V 2:GND 3:Enable 4:Step 5:Direction
 
 Spindle/Laser function is mapped to PWM-Ext header
 
-Pinout: 1:5V 2:GND 3:NC 4:Spindle/LaserPWM 5:Spindle/LaserEnable 6:SpindleDirection
+Pinout: 1:5V 2:GND 3:N/C 4:Spindle/LaserPWM 5:Spindle/LaserEnable 6:SpindleDirection
+
+Coolant control is mapped to MX2 header
+
+Pinout: 1:5V 2:GND 3:N/C 4:Mist(M7) 5:Flood(M8)
 
 # Marlin 3D Printer Firmware
 

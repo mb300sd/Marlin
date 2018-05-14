@@ -1423,7 +1423,7 @@
  *
  * You'll need to select pins for mist and flood ON/OFF
  */
-//#define COOLANT_ENABLE
+#define COOLANT_ENABLE
 #if ENABLED(COOLANT_ENABLE)
   #define COOLANT_MIST           true   // set to "true" if mist coolant is present
   #define COOLANT_FLOOD          true   // set to "true" if flood coolant is present
