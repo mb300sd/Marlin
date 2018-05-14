@@ -294,6 +294,16 @@ void GcodeSuite::process_parsed_command(
         case 5: M5(); break;                                      // M5 - turn spindle/laser off
       #endif
 
+      #if ENABLED(COOLANT_ENABLE)
+        #if ENABLED(COOLANT_MIST)
+          case 7: M7(); break;                                    // M7: turn mist coolant on
+        #endif
+        #if ENABLED(COOLANT_FLOOD)
+          case 8: M8(); break;                                    // M8: turn flood coolant on
+        #endif
+        case 9: M9(); break;                                      // M9: turn coolant off
+      #endif
+
       case 17: M17(); break;                                      // M17: Enable all stepper motors
 
       #if ENABLED(SDSUPPORT)

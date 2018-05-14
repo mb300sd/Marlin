@@ -76,6 +76,9 @@
  * M3   - Turn laser/spindle on, set spindle/laser speed/power, set rotation to clockwise
  * M4   - Turn laser/spindle on, set spindle/laser speed/power, set rotation to counter-clockwise
  * M5   - Turn laser/spindle off
+ * M7   - Turn mist coolant on
+ * M8   - Turn flood coolant on
+ * M9   - Turn coolant off
  * M17  - Enable/Power all stepper motors
  * M18  - Disable all stepper motors; same as M84
  * M20  - List SD card. (Requires SDSUPPORT)
@@ -432,6 +435,16 @@ private:
   #if ENABLED(SPINDLE_LASER_ENABLE)
     static void M3_M4(bool is_M3);
     static void M5();
+  #endif
+
+  #if ENABLED(COOLANT_ENABLE)
+    #if ENABLED(COOLANT_MIST)
+      static void M7();
+    #endif
+    #if ENABLED(COOLANT_FLOOD)
+      static void M8();
+    #endif
+    static void M9();
   #endif
 
   static void M17();
